@@ -1,0 +1,46 @@
+<h3>Criar Pessoa</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Nome</label>
+      <input type="text" class="form-control" id="nome" required [(ngModel)]="pessoa.nome" name="nome">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Sexo</label>
+      <input type="text" class="form-control" id="sexo" required [(ngModel)]="pessoa.sexo" name="sexo">
+    </div>
+
+    <div class="form-group">
+      <label for="name">E-mail</label>
+      <input type="text" class="form-control" id="email" required [(ngModel)]="pessoa.email" name="email">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Data de Nascimento</label>
+      <input type="text" class="form-control" id="dtnascimento" required [(ngModel)]="pessoa.dtNascimento" name="dtnascimento">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Naturalidade</label>
+      <input type="text" class="form-control" id="naturalidade" required [(ngModel)]="pessoa.naturalidade" name="naturalidade">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Nacionalidade</label>
+      <input type="text" class="form-control" id="nacionalidade" required [(ngModel)]="pessoa.nacionalidade" name="nacionalidade">
+    </div>
+
+    <div class="form-group">
+      <label for="name">CPF</label>
+      <input type="text" class="form-control" id="cpf" required [(ngModel)]="pessoa.cpf" name="cpf">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>

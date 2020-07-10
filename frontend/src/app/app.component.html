@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+        <a routerLink="listarPessoas" class="nav-link" routerLinkActive="active">Listar Pessoas</a>
+    </li>
+    <li class="nav-item">
+        <a routerLink="salvarPessoa" class="nav-link" routerLinkActive="active">Adicionar Pessoas</a>
+    </li>
+  </ul>
+</nav>
+
+
+<div class="container">
+  <br>
+  <h2 style="text-align: center;">{{title}}</h2>
+  <hr>  
+  <router-outlet></router-outlet>
+</div>

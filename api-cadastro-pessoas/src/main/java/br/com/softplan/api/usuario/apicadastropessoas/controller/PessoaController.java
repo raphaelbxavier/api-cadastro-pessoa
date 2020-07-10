@@ -13,18 +13,17 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class PessoaController {
 
     @Autowired
     private PessoaRepository pessoaRepository;
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @RequestMapping(value = "/listarPessoas", method = RequestMethod.GET)
     public List<Pessoa> listarPessoas(){
         return pessoaRepository.findAll();
     }
 
-    @CrossOrigin
     @RequestMapping(value = "/salvarPessoa", method = RequestMethod.POST)
     public Pessoa salvarPessoa (@Valid @RequestBody Pessoa pessoa) throws Exception {
         if (!Util.validarEmail(pessoa.getEmail())) {
@@ -41,7 +40,6 @@ public class PessoaController {
         return pessoaRepository.save(pessoa);
     }
 
-    @CrossOrigin
     @RequestMapping(value = "/atualizarPessoa/{id}", method =  RequestMethod.PUT)
     public ResponseEntity<Pessoa> atualizarPessoa(@PathVariable(value = "id") Long id, @Valid @RequestBody Pessoa novaPessoa) throws Exception {
         Optional<Pessoa> pessoaExistente = pessoaRepository.findById(id);
@@ -62,7 +60,6 @@ public class PessoaController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @CrossOrigin
     @RequestMapping(value = "/removerPessoa/{id}", method =  RequestMethod.DELETE)
     public ResponseEntity<Pessoa> removerPessoa(@PathVariable(value = "id") Long id) {
         Optional<Pessoa> pessoa = pessoaRepository.findById(id);

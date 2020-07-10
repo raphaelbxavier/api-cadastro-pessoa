@@ -34,6 +34,6 @@ export class PessoaListComponent implements OnInit {
   }
 
   updatePessoa(id: number){
-    this.router.navigate(['update', id]);
+    this.router.navigate(['atualizarPessoa', id]);
   }
 }

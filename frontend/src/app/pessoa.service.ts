@@ -24,6 +24,6 @@ export class PessoaService {
   }
 
   getPessoasList(): Observable<any> {
-    return this.http.get(`${this.baseUrl}listarPessoas/`);
+    return this.http.get(`${this.baseUrl}listarPessoas`);
   }
 }
